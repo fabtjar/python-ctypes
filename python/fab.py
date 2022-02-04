@@ -10,7 +10,7 @@ elif platform.startswith('linux') or platform == 'linux':
     lib_name = "libfab.so"
 
 
-_libfab = ctypes.CDLL(f"../fab/build/{lib_name}")
+_libfab = ctypes.CDLL("../fab/build/" + lib_name)
 
 
 def say_hello(name):
