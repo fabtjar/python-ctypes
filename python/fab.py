@@ -1,4 +1,5 @@
 from ctypes import CDLL, c_char_p, c_float, c_int
+from pathlib import Path
 from sys import platform
 
 
@@ -9,8 +10,7 @@ elif platform == 'darwin':
 elif platform.startswith('linux') or platform == 'linux':
     lib_name = "libfab.so"
 
-
-_libfab = CDLL("../fab/build/" + lib_name)
+_libfab = CDLL(Path(__file__).parent.parent.joinpath('fab', 'build', lib_name))
 
 
 def say_hello(name):
