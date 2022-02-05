@@ -7,3 +7,6 @@ set(CMAKE_C_STANDARD 99)
 add_library(fab SHARED library.c)
 
 add_executable(test test.c library.c)
+
+target_link_libraries(fab m)
+target_link_libraries(test m)
